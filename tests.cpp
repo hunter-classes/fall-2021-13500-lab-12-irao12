@@ -19,38 +19,50 @@ TEST_CASE("Testing makeVector"){
 TEST_CASE("Testing goodVibes"){
   std::vector<int> v2 {1,2,-1,3,4,-1,6};
   v2 = goodVibes(v2);
-  CHECK(v2.size() == 5);
-  CHECK(v2[0] == 1);
-  CHECK(v2[1] == 2);
-  CHECK(v2[2] == 3);
-  CHECK(v2[3] == 4);
-  CHECK(v2[4] == 6);
+  std::vector<int> happyv2{1,2,3,4,6};
+  for (int i = 0; i < v2.size(); i++){
+    CHECK(v2[i] == happyv2[i]);
+  }
+
   std::vector<int> v3 {12, 3, 4, 0, -23, -32, 2};
   v3 = goodVibes(v3);
-  CHECK(v3.size() == 4);
-  CHECK(v3[0] == 12);
-  CHECK(v3[1] == 3);
-  CHECK(v3[2] == 4);
-  CHECK(v3[3] == 2);
+  std::vector<int> happyv3 {12, 3, 4, 2};
+  for (int i = 0; i < v3.size(); i++){
+    CHECK(v3[i] == happyv3[i]);
+  }
 }
 
 TEST_CASE("Testing gogeta"){
   std::vector<int> v1{1,2,3};
   std::vector<int> v2{4,5};
+  std::vector<int> v1v2{1,2,3,4,5};
   gogeta(v1, v2);
-  CHECK(v1.size() == 5);
-  CHECK(v1[0] == 1);
-  CHECK(v1[1] == 2);
-  CHECK(v1[2] == 3);
-  CHECK(v1[3] == v2[0]);
-  CHECK(v1[4] == v2[1]);
+  for (int i = 0; i < v1.size(); i++){
+    CHECK(v1[i] == v1v2[i]);
+  }
   gogeta(v1, v2);
-  CHECK(v1.size() == 7);
-  CHECK(v1[0] == 1);
-  CHECK(v1[1] == 2);
-  CHECK(v1[2] == 3);
-  CHECK(v1[3] == v2[0]);
-  CHECK(v1[4] == v2[1]);
-  CHECK(v1[5] == v2[0]);
-  CHECK(v1[6] == v2[1]);
+  std::vector<int> v1v2v2{1,2,3,4,5,4,5};
+  for (int i = 0; i < v1.size(); i++){
+    CHECK(v1[i] == v1v2v2[i]);
+  }
+}
+
+TEST_CASE("Testing sumPairWise"){
+  std::vector<int> v1{1,2,3};
+  std::vector<int> v2{4,5};
+  std::vector<int> v1v2 = sumPairWise(v2, v1);
+  std::vector<int> vtest1 {5, 7, 3};
+  for (int i = 0; i < v1.size(); i++){
+    CHECK(v1v2[i] == vtest1[i]);
+  }
+
+  std::vector<int> v3{1,2,3,8,12};
+  std::vector<int> v4{4,5,12,3};
+  std::vector<int> v3v4 = sumPairWise(v3, v4);
+  std::vector<int> vtest2 {5, 7, 15, 11, 12};
+  for (int i = 0; i < v3.size(); i++){
+    CHECK(v3v4[i] == vtest2[i]);
+  }
+
+
 }
