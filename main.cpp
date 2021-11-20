@@ -24,7 +24,28 @@ int main(){
     std::cout << v2[i] << " ";
   }
   std::cout << '\n';
-  return 0;
 
   std::cout << "\nTask C" << '\n';
+  std::vector<int> v3{1,2,3};
+  std::vector<int> v4{4,5};
+  std::cout << "v3: ";
+  for (int i = 0; i < v3.size(); i++){
+    std::cout << v3[i] << " ";
+  }
+  std::cout << '\n';
+  std::cout << "v4: ";
+  for (int i = 0; i < v4.size(); i++){
+    std::cout << v4[i] << " ";
+  }
+  std::cout << '\n';
+
+  gogeta(v3, v4); // v1 is now [1,2,3,4,5] and v2 is empty.
+  std::cout << "v3 after gogeta(v3, v4): ";
+  for (int i = 0; i < v3.size(); i++){
+    std::cout << v3[i] << " ";
+  }
+  std::cout << '\n';
+
+
+  return 0;
 }

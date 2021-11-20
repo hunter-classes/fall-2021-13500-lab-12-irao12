@@ -33,3 +33,24 @@ TEST_CASE("Testing goodVibes"){
   CHECK(v3[2] == 4);
   CHECK(v3[3] == 2);
 }
+
+TEST_CASE("Testing gogeta"){
+  std::vector<int> v1{1,2,3};
+  std::vector<int> v2{4,5};
+  gogeta(v1, v2);
+  CHECK(v1.size() == 5);
+  CHECK(v1[0] == 1);
+  CHECK(v1[1] == 2);
+  CHECK(v1[2] == 3);
+  CHECK(v1[3] == v2[0]);
+  CHECK(v1[4] == v2[1]);
+  gogeta(v1, v2);
+  CHECK(v1.size() == 7);
+  CHECK(v1[0] == 1);
+  CHECK(v1[1] == 2);
+  CHECK(v1[2] == 3);
+  CHECK(v1[3] == v2[0]);
+  CHECK(v1[4] == v2[1]);
+  CHECK(v1[5] == v2[0]);
+  CHECK(v1[6] == v2[1]);
+}
