@@ -36,14 +36,23 @@ TEST_CASE("Testing gogeta"){
   std::vector<int> v1{1,2,3};
   std::vector<int> v2{4,5};
   std::vector<int> v1v2{1,2,3,4,5};
+
   gogeta(v1, v2);
   for (int i = 0; i < v1.size(); i++){
     CHECK(v1[i] == v1v2[i]);
   }
-  gogeta(v1, v2);
-  std::vector<int> v1v2v2{1,2,3,4,5,4,5};
+
+  //checks if v2 is emptied after gogeta
+  CHECK(v2.size() == 0);
+
+  gogeta(v1, v2); // should not change v1 since v2 is empty
   for (int i = 0; i < v1.size(); i++){
-    CHECK(v1[i] == v1v2v2[i]);
+    CHECK(v1[i] == v1v2[i]);
+  }
+
+  gogeta(v2, v1);
+  for (int i = 0; i < v2.size(); i++){
+    CHECK(v2[i] == v1v2[i]);
   }
 }
 

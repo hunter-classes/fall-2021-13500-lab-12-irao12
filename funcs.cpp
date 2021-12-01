@@ -23,6 +23,10 @@ void gogeta(std::vector<int> &goku, std::vector<int> &vegeta){
   for (int i = 0; i < vegeta.size(); i++){
     goku.push_back(vegeta[i]);
   }
+  for (int i = 0; i <= vegeta.size(); i++){
+    if (vegeta.size() != 0)
+    vegeta.pop_back();
+  }
   return;
 }
 

@@ -47,8 +47,12 @@ int main(){
     std::cout << v3[i] << " ";
   }
   std::cout << '\n';
-
-
+  std::cout << "v4 after gogeta(v3, v4): ";
+  for (int i = 0; i < v4.size(); i++){
+    std::cout << v4[i] << " ";
+  }
+  std::cout << '\n';
+  
   std::cout << "\nTask D" << '\n';
   std::vector<int> v5{1,2,3,8,12};
   std::vector<int> v6{4,5,12,3};
