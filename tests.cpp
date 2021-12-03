@@ -54,6 +54,7 @@ TEST_CASE("Testing gogeta"){
   for (int i = 0; i < v2.size(); i++){
     CHECK(v2[i] == v1v2[i]);
   }
+  CHECK(v1.size() == 0);
 }
 
 TEST_CASE("Testing sumPairWise"){
