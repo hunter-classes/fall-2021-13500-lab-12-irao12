@@ -13,7 +13,7 @@ int main(){
 
   std::cout << "\nTask B" << '\n';
   std::vector<int> v2 {1,2,-1,3,4,-1,6};
-  std::cout << "Original vector:" << '\n';
+  std::cout << "Original vector v2:" << '\n';
   for (int i = 0; i < v2.size(); i++){
     std::cout << v2[i] << " ";
   }
@@ -52,7 +52,7 @@ int main(){
     std::cout << v4[i] << " ";
   }
   std::cout << '\n';
-  
+
   std::cout << "\nTask D" << '\n';
   std::vector<int> v5{1,2,3,8,12};
   std::vector<int> v6{4,5,12,3};
